@@ -2,11 +2,34 @@
 <html>
   <head>
     <title>What Next Book</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js" defer></script>
   </head>
   <body>
-    <div>
-      <h1>What Next Book</h1>
+    <div class="main-container">
+      <h1>Find Next Book to Read</h1>
+      <form id="finder-form">
+        <div class="input-container">
+          <i class="ri-search-line ri-lg"></i>
+          <input
+            name="keyword"
+            id="keyword"
+            type="text"
+            placeholder="Enter book title, author name or ISBN"
+            autocomplete="off"
+          />
+        </div>
+      </form>
+      <div id="finder-result-container"></div>
     </div>
   </body>
 </html>
-

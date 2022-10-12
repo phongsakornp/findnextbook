@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Sarabun:300,500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: "Sarabun", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f4;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+/* Finder form and inputs */
+#finder-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 74%;
+  margin: 14px 0;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #374151;
+  background-color: white;
+  width: 100%;
+}
+.input-container > input {
+  font-family: "Sarabun", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  width: 580px;
+  padding: 14px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.input-container > i {
+  color: #374151;
+  padding: 14px 0 14px 14px;
+}
+
+/* Finder result list */
+#finder-result-container {
+  width: 74%;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.book-item {
+  margin: 44px 0;
+  padding: 14px;
+}
+.book-item img {
+  flex-shrink: 0;
+  width: 100px;
+  object-fit: cover;
+  background-color: white;
+}
+.book-item > a {
+  text-decoration: none;
+  color: #374151;
+  display: flex;
+}
+.book-details-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+}
+.book-details-container h3 {
+  font-family: "Sarabun", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0;
+}
+.book-details-container p {
+  font-family: "Sarabun", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 8px 0;
+  color: #4b5563;
+}
