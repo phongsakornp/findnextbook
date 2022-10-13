@@ -14,6 +14,28 @@ body {
   background-color: #f5f5f4;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sarabun", sans-serif;
+  font-weight: bold;
+}
+h1 {
+  font-size: 36px;
+  line-height: 40px;
+}
+h2 {
+  font-size: 24;
+  line-height: 32px;
+}
+h3 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
 .main-container {
   width: 100%;
   max-width: 1024px;
@@ -22,12 +44,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px 0;
-}
-
-h1 {
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 40px;
 }
 
 /* Finder form and inputs */
@@ -61,47 +77,69 @@ h1 {
   padding: 14px 0 14px 14px;
 }
 
-/* Finder result list */
-#finder-result-container {
+#finder-result-section {
   width: 74%;
 }
-ul {
+
+/* Book List */
+.book-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.book-item {
+.book-list-item {
   margin: 44px 0;
   padding: 14px;
 }
-.book-item img {
+.book-list-item img {
   flex-shrink: 0;
   width: 100px;
   object-fit: cover;
   background-color: white;
 }
-.book-item > a {
+.book-list-item > a {
   text-decoration: none;
   color: #374151;
   display: flex;
 }
-.book-details-container {
+.book-details {
   display: flex;
   flex-direction: column;
   margin-left: 24px;
 }
-.book-details-container h3 {
-  font-family: "Sarabun", sans-serif;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 28px;
+.book-details h3 {
   margin: 0;
 }
-.book-details-container p {
+.book-details p {
   font-family: "Sarabun", sans-serif;
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
   margin: 8px 0;
+  color: #4b5563;
+}
+
+/* Main Book */
+.main-book {
+  margin: 44px 0;
+  padding: 14px;
+  display: flex;
+}
+.main-book img {
+  flex-shrink: 0;
+  width: 128px;
+  object-fit: cover;
+  background-color: white;
+}
+.book-details h2 {
+  margin: 0;
+}
+
+/* Next Book List */
+#next-book-list-section {
+  border-top: 1px solid #d1d5db;
+  width: 74%;
+}
+#next-book-list-section h3 {
   color: #4b5563;
 }

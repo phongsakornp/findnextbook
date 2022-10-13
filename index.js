@@ -14,8 +14,8 @@ function renderBookList(books) {
     return;
   }
 
-  let listContainerElm = document.getElementById("finder-result-container");
   let listElm = document.createElement("ul");
+  listElm.classList = ["book-list"];
 
   for (let i = 0; i <= books.length; i++) {
     let book = books[i];
@@ -23,7 +23,7 @@ function renderBookList(books) {
       let { title, subtitle, imageLinks, authors } = book.volumeInfo;
 
       let bookElm = document.createElement("li");
-      bookElm.classList = ["book-item"];
+      bookElm.classList = ["book-list-item"];
 
       let linkElm = document.createElement("a");
       linkElm.href = `/book.html?id=${book.id}`;
@@ -33,7 +33,7 @@ function renderBookList(books) {
         (imageLinks && imageLinks.thumbnail) || "./default-book-cover.png";
 
       let detailsContainer = document.createElement("div");
-      detailsContainer.classList = ["book-details-container"];
+      detailsContainer.classList = ["book-details"];
 
       let titleElm = document.createElement("h3");
       titleElm.innerHTML = makeTitleText(title, subtitle);
@@ -49,7 +49,8 @@ function renderBookList(books) {
       listElm.appendChild(bookElm);
     }
 
-    listContainerElm.replaceChildren(listElm);
+    let listSectionElm = document.getElementById("finder-result-section");
+    listSectionElm.replaceChildren(listElm);
   }
 }
 

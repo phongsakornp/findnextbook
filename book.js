@@ -3,43 +3,48 @@ function getSearchParam(queryString, name) {
   return params.get(name);
 }
 
-function makeAuthorsText(authors) {
-  if (!authors) {
-    return "";
-  }
-
-  return authors.join(", ");
-}
-
 function makeTitleText(title, subtitle) {
   if (!title) {
     return "";
   }
-  let titleText = title;
-  if (subtitle) {
-    titleText = `${titleText}: ${subtitle}`;
-  }
-  return titleText;
+  return subtitle ? `${title}: ${subtitle}` : title;
 }
 
-function renderBook(title, subtitle, coverImageSrc, author) {
-  let bookElm = document.createElement("div");
+function makeAuthorsText(authors) {
+  return authors ? authors.join(", ") : "";
+}
 
-  let titleElm = document.createElement("h3");
-  titleElm.innerHTML = makeTitleText(title, subtitle);
+function renderMainBook(title, coverImageSrc, author) {
+  let bookElm = document.createElement("div");
+  bookElm.classList = ["main-book"];
 
   let coverImageElm = document.createElement("img");
   coverImageElm.src = coverImageSrc;
 
+  let detailsContainer = document.createElement("div");
+  detailsContainer.classList = ["book-details"];
+
+  let titleElm = document.createElement("h2");
+  titleElm.innerHTML = title;
+
   let authorElm = document.createElement("p");
   authorElm.innerHTML = author;
 
-  bookElm.appendChild(titleElm);
   bookElm.appendChild(coverImageElm);
-  bookElm.appendChild(authorElm);
+  detailsContainer.appendChild(titleElm);
+  detailsContainer.appendChild(authorElm);
+  bookElm.appendChild(detailsContainer);
 
-  let bookContainer = document.getElementById("book-container");
-  bookContainer.replaceChildren(bookElm);
+  let section = document.getElementById("main-book-section");
+  section.replaceChildren(bookElm);
+}
+
+function renderNextBookList() {
+  let sectionTitleElm = document.createElement("h3");
+  sectionTitleElm.innerText = "Next Books";
+
+  let section = document.getElementById("next-book-list-section");
+  section.appendChild(sectionTitleElm);
 }
 
 async function main() {
@@ -50,12 +55,13 @@ async function main() {
   );
   let { title, subtitle, imageLinks, authors } = bookResponse.data.volumeInfo;
 
-  renderBook(
-    title,
-    subtitle,
-    imageLinks && imageLinks.thumbnail,
+  renderMainBook(
+    makeTitleText(title, subtitle),
+    (imageLinks && imageLinks.thumbnail) || "./default-book-cover.png",
     makeAuthorsText(authors)
   );
+
+  renderNextBookList();
 }
 
 main();
