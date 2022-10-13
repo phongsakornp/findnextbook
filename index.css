@@ -21,6 +21,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 24px 0;
 }
 
 h1 {
@@ -36,7 +37,7 @@ h1 {
   align-items: center;
   justify-content: center;
   width: 74%;
-  margin: 14px 0;
+  margin: 24px 0;
 }
 .input-container {
   display: flex;
