@@ -115,18 +115,20 @@ async function main() {
     makeTitleText(title, subtitle),
     (imageLinks && imageLinks.thumbnail) || "./default-book-cover.png",
     makeAuthorsText(authors),
-    categories || []
+    (categories && categories.slice(0, 2)) || []
   );
 
-  let subjectBooksResponse = await axios.get(
-    `https://www.googleapis.com/books/v1/volumes?q=${categories[0]
-      .split("/")
-      .join(";")}&maxResults=40`
-  );
+  if (categories) {
+    let subjectBooksResponse = await axios.get(
+      `https://www.googleapis.com/books/v1/volumes?q=${categories[0]
+        .split("/")
+        .join(";")}&maxResults=40`
+    );
 
-  let subjectBooks = subjectBooksResponse && subjectBooksResponse.data.items;
-  if (subjectBooks && subjectBooks.length > 0) {
-    renderNextBookList(subjectBooks);
+    let subjectBooks = subjectBooksResponse && subjectBooksResponse.data.items;
+    if (subjectBooks && subjectBooks.length > 0) {
+      renderNextBookList(subjectBooks);
+    }
   }
 }
 
