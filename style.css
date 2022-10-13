@@ -125,11 +125,13 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .main-book {
   margin: 44px 0;
   padding: 14px;
   display: flex;
+  width: 100%;
   max-width: 70%;
 }
 .main-book img {
