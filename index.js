@@ -48,10 +48,10 @@ function renderBookList(books) {
       bookElm.appendChild(linkElm);
       listElm.appendChild(bookElm);
     }
-
-    let listSectionElm = document.getElementById("finder-result-section");
-    listSectionElm.replaceChildren(listElm);
   }
+
+  let listSectionElm = document.getElementById("finder-result-section");
+  listSectionElm.replaceChildren(listElm);
 }
 
 async function handleFinderFormSubmit(event) {
