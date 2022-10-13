@@ -157,6 +157,7 @@ h3 {
 .category-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 8px;
 }
 .category {
   font-family: "Sarabun", sans-serif;
@@ -164,7 +165,6 @@ h3 {
   background-color: #e5e7eb;
   color: #6b7280;
   padding: 2px 8px;
-  margin: 4px;
   border-radius: 10px;
   flex-grow: 0;
 }
